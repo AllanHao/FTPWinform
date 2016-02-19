@@ -279,3 +279,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+FTPWinform/App.config
+FTPWinform/App.config
+*.config

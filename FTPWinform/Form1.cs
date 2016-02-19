@@ -24,5 +24,11 @@ namespace FTPWinform
             System.Net.Ftp.clsFTP ftp = new System.Net.Ftp.clsFTP(new Uri("ftp://118.186.246.162:2121"), "", "iwehave2305!");
             ftp.DownloadFile("GAIA_WEB_RETAIL_CJ_backup_2016_02_18_000001_1453809.bak");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            System.Net.Ftp.clsFTP ftp = new System.Net.Ftp.clsFTP(new Uri("ftp://118.186.246.162:2121"), "ftp_admin", "iwehave2305!");
+            ftp.DeleteFile("GAIA_WEB_RETAIL_CJ_backup_2016_02_18_000001_1453809.bak");
+        }
     }
 }
