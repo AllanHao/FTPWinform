@@ -6,7 +6,7 @@ using System.IO;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
-namespace System.Net.Ftp
+namespace FTPController
 {
     /// <summary>
     /// FTP处理操作类
@@ -49,7 +49,7 @@ namespace System.Net.Ftp
         Unknown
     }
     #endregion
-    public class clsFTP
+    public class FTP
     {
         #region 属性信息
         /// <summary>
@@ -211,7 +211,7 @@ namespace System.Net.Ftp
         /// <param name="FtpUri">FTP地址</param>
         /// <param name="strUserName">登录用户名</param>
         /// <param name="strPassword">登录密码</param>
-        public clsFTP(Uri FtpUri, string strUserName, string strPassword)
+        public FTP(Uri FtpUri, string strUserName, string strPassword)
         {
             this._Uri = new Uri(FtpUri.GetLeftPart(UriPartial.Authority));
             _directoryPath = FtpUri.AbsolutePath;
@@ -230,7 +230,7 @@ namespace System.Net.Ftp
         /// <param name="strUserName">登录用户名</param>
         /// <param name="strPassword">登录密码</param>
         /// <param name="objProxy">连接代理</param>
-        public clsFTP(Uri FtpUri, string strUserName, string strPassword, WebProxy objProxy)
+        public FTP(Uri FtpUri, string strUserName, string strPassword, WebProxy objProxy)
         {
             this._Uri = new Uri(FtpUri.GetLeftPart(UriPartial.Authority));
             _directoryPath = FtpUri.AbsolutePath;
@@ -245,7 +245,7 @@ namespace System.Net.Ftp
         /// <summary>
         /// 构造函数
         /// </summary>
-        public clsFTP()
+        public FTP()
         {
             this._userName = "anonymous";  //匿名用户
             this._password = "@anonymous";
@@ -256,7 +256,7 @@ namespace System.Net.Ftp
         /// <summary>
         /// 析构函数
         /// </summary>
-        ~clsFTP()
+        ~FTP()
         {
             if (Response != null)
             {
