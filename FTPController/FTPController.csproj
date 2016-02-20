@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\IWEHAVE\代码\项目代码\GAIA地图代码\平台工具\Runtime\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -43,7 +46,14 @@
     <Compile Include="Auth.cs" />
     <Compile Include="FTP.cs" />
     <Compile Include="Log.cs" />
+    <Compile Include="MessageConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FTPModel\FTPModel.csproj">
+      <Project>{254f2aa9-3173-44a2-bca3-77fc4d6c2ea1}</Project>
+      <Name>FTPModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

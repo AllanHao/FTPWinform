@@ -367,15 +367,18 @@ namespace FTPController
                     stream.Write(bt, 0, bt.Length);
                     stream.Flush();
                     stream.Close();
+                    MessageConsole.WriteConsole("下载文件“" + RemoteFileName + "”成功，本地路径：“" + LocalPath + "”，本地文件名：“" + LocalFileName + "”。");
                     return true;
                 }
                 else
                 {
+                    MessageConsole.WriteConsole("下载“" + RemoteFileName + "”失败，本地路径：“" + LocalPath + "”，本地文件名：“" + LocalFileName + "”。", FTPModel.LogModel.LogLevel.Error);
                     return false;
                 }
             }
             catch (Exception ep)
             {
+                MessageConsole.WriteConsole(ep);
                 ErrorMsg = ep.ToString();
                 throw ep;
             }
@@ -1047,9 +1050,11 @@ namespace FTPController
                     throw new Exception("文件名非法！");
                 }
                 Response = Open(new Uri(this.Uri.ToString() + RemoteFileName), WebRequestMethods.Ftp.DeleteFile);
+                MessageConsole.WriteConsole("执行删除操作，返回状态：" + Response.StatusCode);
             }
             catch (Exception ep)
             {
+                MessageConsole.WriteConsole(ep);
                 ErrorMsg = ep.ToString();
                 throw ep;
             }
