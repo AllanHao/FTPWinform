@@ -22,7 +22,7 @@ namespace FTPWinform
             //FTPController.FTPHelper ftp = new FTPController.FTPHelper("118.186.246.162",2121,"ftp_user","iwehave2305!");
             //ftp.OpenDownload("GAIA_WEB_RETAIL_CJ_backup_2016_02_18_000001_1453809.bak");
             FTPController.FTP ftp = new FTPController.FTP(new Uri(FTPController.Auth.Url), FTPController.Auth.User, FTPController.Auth.Password);
-            ftp.DownloadFile("memcached.rar");
+            ftp.DownloadFile("memcached.rar", @"D:\");
         }
 
         private void button2_Click(object sender, EventArgs e)
