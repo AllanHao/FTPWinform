@@ -9,5 +9,6 @@ namespace FTPModel
     public class Delegate
     {
         public delegate void OnConsoleLogger(object msg, FTPModel.LogModel.LogLevel level = FTPModel.LogModel.LogLevel.Common);
+        public delegate void OnTimingStart();
     }
 }
